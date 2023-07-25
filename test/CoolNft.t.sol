@@ -3,6 +3,7 @@ pragma solidity ^0.8.20;
 
 import "forge-std/Test.sol";
 import "../src/CoolNft.sol";
+import "openzeppelin-contracts/contracts/utils/Strings.sol";
 
 contract CoolNftTest is Test {
 
@@ -21,7 +22,7 @@ contract CoolNftTest is Test {
 
     function testUri() public {
         uint256 index = nft.mint(toMint);
-        assertEq(nft.tokenURI(index), string(abi.encodePacked("https://token.metadata.com/token/",index,".json")));
+        assertEq(nft.tokenURI(index), string(abi.encodePacked("https://nft-server.fly.dev/meta/1")));
     }
 
     function testOwned() public {
