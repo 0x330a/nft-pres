@@ -18,5 +18,8 @@ deploy NETWORK=default_rpc:
 mint TO ADDRESS=first_address NETWORK=default_rpc:
     cast send --mnemonic=.mnemonic --rpc-url={{NETWORK}} {{ADDRESS}} "mint(address)(uint256)" {{TO}}
 
+minted ADDRESS=first_address NETWORK=default_rpc:
+    cast call --rpc-url={{NETWORK}} {{ADDRESS}} "tokens()(uint256)"
+
 verify ADDRESS:
     forge verify-contract -e $ETHERSCAN_API {{ADDRESS}} CoolNft --verifier-url https://api-sepolia.etherscan.io/api

@@ -15,6 +15,10 @@ contract CoolNft is ERC721 {
         
     }
 
+    function contractURI() public pure returns (string memory) {
+      return "https://nft-server.fly.dev/contract-meta";
+    }
+
     function tokenURI(uint256 id) override public view virtual returns (string memory) {
       return string.concat("https://nft-server.fly.dev/meta/", id.toString());
     }
