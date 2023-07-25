@@ -16,6 +16,7 @@ contract CoolNft is ERC721 {
     }
 
     function mint(address toMint) public returns (uint256) {
+        uint256 tokenNumber = ++tokens;
         _safeMint(toMint, ++tokens);
         return tokens;
     }
