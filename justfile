@@ -23,3 +23,6 @@ minted NETWORK=default_rpc ADDRESS=default_address:
 
 verify ADDRESS:
     forge verify-contract -e $ETHERSCAN_API {{ADDRESS}} CoolNft --verifier-url https://api-sepolia.etherscan.io/api
+
+server:
+    anvil --mnemonic=.mnemonic
